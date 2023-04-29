@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow">
+        <div class="card-body bg-secondary-theme text-center">
+          <h3 class="text-theme-center">All Blog Posts</h3>
+          <p>From here yu can manage your blog-posts</p>
+
+          <button routerLink='/posts/new' class="btn btn-info bg-theme text-white">Add New Post</button>
+          <button routerLink='/' class="btn btn-warning ms-3">Back to Dashboard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card shadow">
+        <div class="card-body">
+          <table class="table row-border hover">
+            <thead>
+              <tr>
+                <th width="40">No.</th>
+                <th width="200">Post Image</th>
+                <th width="150">Title</th>
+                <!-- <th width="300">Excerpt</th> -->
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let post of posts|async; let i=index">
+                <td>{{i+1}}</td>
+                <td><img src="{{post.postImg}}" alt="img" class="img img-fluid"></td>
+                <td>{{post.title}}</td>
+                <!-- <td>{{post.excerpt}}</td> -->
+                <td >{{post.category.category}}</td>
+                <td>{{post.createdAt |date}}</td>
+                <td><button class="btn btn-warning btn-sm" routerLink="/posts/new" [queryParams]="{id:post.id}">Edit</button>
+                  <button class="btn btn-danger btn-sm ms-2" (click)="onDelete(post.postImg,post.id)">Delete</button>
+
+                  <button *ngIf="!post.isFeatured" class="btn btn-success btn-sm ms-2 mt-2" (click)="isFeatured(post.id,true)">Mark Featured</button>
+                  <button *ngIf="post.isFeatured"  class="btn btn-info btn-sm ms-2 mt-2" (click)="isFeatured(post.id,false)">Unmark Featured</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

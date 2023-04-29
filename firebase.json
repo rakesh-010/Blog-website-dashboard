@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "ang-blog-dashboard-223",
+    "public": "dist/ang-blog-dashboard",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+/* @import "~ngx-toastr/toastr"; */
+
+:root{
+  --primary-color:#159895;
+  --secondary-color: #B9F3E4;
+  --body-text:#576CBC;
+  --navbar-footer-color:#F0F0F0;
+}
+
+.body{
+  font-family: 'Poppins', sans-serif;
+  font-size:15px;
+  color:var(--body-text);
+}
+
+.site-logo{
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: var(--secondary-color);
+  color:var(--primary-color);
+
+}
+
+.shadow-effect{
+  border:none;
+  box-shadow:0 0 33px -10px rgba(71,14,254,0.3);
+}
+
+
+.bg-theme{
+  background-color: var(--primary-color);
+}
+.bg-secondary-theme{
+  background-color: var(--secondary-color);
+}
+.text-theme-primary{
+  color:var(--primary-color);
+}
+
+
+input[type=text],input[type=password],input[type=email]{
+  height:60px;
+  padding-left: 20px;
+  width: 100%;
+}
+
